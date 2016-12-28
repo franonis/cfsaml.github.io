@@ -1,7 +1,6 @@
 {
     "name": "cugr/ncbiwrapper",
     "description": "php web wrappers for scraping free public biology database",
-    "type": "metapackage",
     "license": "MIT",
     "authors": [
         {
