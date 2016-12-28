@@ -1,15 +1,18 @@
-# Biophpwrappers
+# ncbiwrapper
 ### Web wrapper utilities
 1. PubMed
 2. EST
 
-### Install
+### Install from source
 	1. Install your dependencies:
 		composer install
 	2. Require Composer's autoloader
 		require 'vendor/autoload.php';
 	3. Example
 		check out test/
+
+### Install with composer
+	composer require cugr/ncbiwrapper:dev-master
 
 
 ## Note
