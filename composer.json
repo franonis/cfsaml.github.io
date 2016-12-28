@@ -1,0 +1,18 @@
+{
+    "name": "cugr/ncbiwrapper",
+    "description": "php web wrappers for scraping free public biology database",
+    "type": "metapackage",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liub1993",
+            "email": "598604711@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "BioWrapper\\": "src/BioWrapper"
+        }
+    }
+}
