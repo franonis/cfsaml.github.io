@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
  
-namespace BioWrapper\PubMed;
-use BioWrapper\PubMed\PubMed;
-use BioWrapper\PubMed\Article;
+namespace BioWrapper\NCBI\PubMed;
+use BioWrapper\NCBI\PubMed\PubMed;
+use BioWrapper\NCBI\PubMed\Article;
 use SimpleXMLElement;
 
 class WebEnv extends PubMed

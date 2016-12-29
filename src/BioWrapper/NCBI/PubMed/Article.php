@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace BioWrapper\PubMed;
+namespace BioWrapper\NCBI\PubMed;
 use SimpleXMLElement;
 
 class Article

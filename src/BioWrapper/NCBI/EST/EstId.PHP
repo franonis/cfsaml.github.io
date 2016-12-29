@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
  
-namespace BioWrapper\EST;
-use BioWrapper\EST\EstXmlParser;
-use BioWrapper\Entrez;
+namespace BioWrapper\NCBI\EST;
+use BioWrapper\NCBI\EST\EstXmlParser;
+use BioWrapper\NCBI\Entrez;
 use SimpleXMLElement;
 
 class EstId extends Entrez

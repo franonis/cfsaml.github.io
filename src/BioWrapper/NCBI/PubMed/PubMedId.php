@@ -8,8 +8,8 @@
  * file that was distributed with this source code.
  */
 
-namespace BioWrapper\PubMed;
-use BioWrapper\PubMed\PubMed;
+namespace BioWrapper\NCBI\PubMed;
+use BioWrapper\NCBI\PubMed\PubMed;
 use SimpleXMLElement;
 use \Exception;
 

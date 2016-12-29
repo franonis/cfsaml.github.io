@@ -13,7 +13,7 @@ require '../vendor/autoload.php';
 /**
  * WebEnv: get all the articles once with search term
  */
-$webenv = new BioWrapper\PubMed\WebEnv();
+$webenv = new BioWrapper\NCBI\PubMed\WebEnv();
 $articles = $webenv->query('sea cucumber database');
 foreach ($articles as $article) {
 	// echo $article->getPubMedId()."\t".json_encode($article->getKeywords())."\n";
@@ -24,6 +24,6 @@ foreach ($articles as $article) {
 /**
  * PubMedId: get an aticle with a PubMed ID
  */
-$pubmedid = new BioWrapper\PubMed\PubMedId();
+$pubmedid = new BioWrapper\NCBI\PubMed\PubMedId();
 $article = $pubmedid->query(28012135);
 echo $article->getArticleTitle()."\n";

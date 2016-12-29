@@ -8,8 +8,8 @@
  * file that was distributed with this source code.
  */
 
-namespace BioWrapper\PubMed;
-use BioWrapper\Entrez;
+namespace BioWrapper\NCBI\PubMed;
+use BioWrapper\NCBI\Entrez;
 
 abstract class PubMed extends Entrez
 {

@@ -11,11 +11,11 @@
 require '../vendor/autoload.php';
 
 ## EstId
-$est = new BioWrapper\EST\EstId();
+$est = new BioWrapper\NCBI\EST\EstId();
 $est = $est->query('664802198');
 var_dump($est->toJSON());
 
 ## WebEnv
-$ests = new BioWrapper\EST\WebEnv();
+$ests = new BioWrapper\NCBI\EST\WebEnv();
 $xml = $ests->query('Giant panda');
 var_dump($xml);
