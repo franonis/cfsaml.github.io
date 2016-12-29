@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the biophpwrappers package.
+ * This file is part of the BioScraper package.
  *
  * (c) Bing Liu <liub@mail.bnu.edu.cn>
  *
@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
  
-namespace BioWrapper\NCBI\PubMed;
-use BioWrapper\NCBI\PubMed\PubMed;
-use BioWrapper\NCBI\PubMed\Article;
+namespace BioScraper\NCBI\PubMed;
+use BioScraper\NCBI\PubMed\PubMed;
+use BioScraper\NCBI\PubMed\Article;
 use SimpleXMLElement;
 
 class WebEnv extends PubMed
@@ -29,7 +29,7 @@ class WebEnv extends PubMed
 	 * Main function of this class, get the result xml
 	 * @param  string $term What are we searching?
 	 * @param string $dir Where to save the results, defaults to current directory
-	 * @return array array of New BioWrapper\PubMed\Article objects
+	 * @return array array of New BioScraper\PubMed\Article objects
 	 */
 	public function query($term,$dir='.')
 	{

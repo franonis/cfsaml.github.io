@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the biophpwrappers package.
+ * This file is part of the BioScraper package.
  *
  * (c) Bing Liu <liub@mail.bnu.edu.cn>
  *
@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace BioWrapper\NCBI\PubMed;
+namespace BioScraper\NCBI\PubMed;
 use SimpleXMLElement;
 
 class Article

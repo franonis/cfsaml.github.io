@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the biowrappers package.
+ * This file is part of the BioScraper package.
  *
  * (c) Bing Liu <liub@mail.bnu.edu.cn>
  *
@@ -11,11 +11,11 @@
 require '../vendor/autoload.php';
 
 ## EstId
-$est = new BioWrapper\NCBI\EST\EstId();
+$est = new BioScraper\NCBI\EST\EstId();
 $est = $est->query('664802198');
 var_dump($est->toJSON());
 
 ## WebEnv
-$ests = new BioWrapper\NCBI\EST\WebEnv();
+$ests = new BioScraper\NCBI\EST\WebEnv();
 $xml = $ests->query('Giant panda');
 var_dump($xml);

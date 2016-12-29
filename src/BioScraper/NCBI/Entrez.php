@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Biophpwrappers package.
+ * This file is part of the BioScraper package.
  *
  * (c) Bing Liu <liub@mail.bnu.edu.cn>
  *
@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace BioWrapper\NCBI;
+namespace BioScraper\NCBI;
 
 abstract class Entrez
 {

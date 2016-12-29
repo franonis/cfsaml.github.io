@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the biophpwrappers package.
+ * This file is part of the BioScraper package.
  *
  * (c) Bing Liu <liub@mail.bnu.edu.cn>
  *
@@ -13,7 +13,7 @@ require '../vendor/autoload.php';
 /**
  * WebEnv: get all the articles once with search term
  */
-$webenv = new BioWrapper\NCBI\PubMed\WebEnv();
+$webenv = new BioScraper\NCBI\PubMed\WebEnv();
 $articles = $webenv->query('sea cucumber database');
 foreach ($articles as $article) {
 	// echo $article->getPubMedId()."\t".json_encode($article->getKeywords())."\n";
@@ -24,6 +24,6 @@ foreach ($articles as $article) {
 /**
  * PubMedId: get an aticle with a PubMed ID
  */
-$pubmedid = new BioWrapper\NCBI\PubMed\PubMedId();
+$pubmedid = new BioScraper\NCBI\PubMed\PubMedId();
 $article = $pubmedid->query(28012135);
 echo $article->getArticleTitle()."\n";

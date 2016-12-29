@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the biophpwrappers package.
+ * This file is part of the BioScraper package.
  *
  * (c) Bing Liu <liub@mail.bnu.edu.cn>
  *
@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace BioWrapper\NCBI\EST;
-use BioWrapper\NCBI\EST\EstXmlParser;
-use BioWrapper\NCBI\Entrez;
+namespace BioScraper\NCBI\EST;
+use BioScraper\NCBI\EST\EstXmlParser;
+use BioScraper\NCBI\Entrez;
 use SimpleXMLElement;
 
 class WebEnv extends Entrez
@@ -31,7 +31,7 @@ class WebEnv extends Entrez
 	/**
 	 * Main function of this class, get the result xml
 	 * @param  string $term What are we searching?
-	 * @return array array of New BioWrapper\EST\EstXmlParser objects
+	 * @return array array of New BioScraper\EST\EstXmlParser objects
 	 */
 	public function query($term,$dir = '.')
 	{
