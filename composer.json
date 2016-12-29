@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4":{
-            "BioWrapper\\": "src/BioScraper"
+            "BioScraper\\": "src/BioScraper"
         }
     }
 }
