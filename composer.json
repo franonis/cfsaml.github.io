@@ -1,5 +1,5 @@
 {
-    "name": "cugr/wrapper",
+    "name": "cugr/biowrapper",
     "description": "php web wrappers for scraping free public biology database",
     "keywords": ["ncbi","pubmed","wrapper","EST"],
     "homepage": "https://github.com/liub1993/BioWrapper.git",
