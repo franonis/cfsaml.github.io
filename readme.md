@@ -1,4 +1,4 @@
-# ncbiwrapper
+# BioWrapper
 ### Web wrapper utilities
 1. PubMed
 2. EST
