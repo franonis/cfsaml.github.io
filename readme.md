@@ -12,7 +12,7 @@
 		check out test/
 
 ### Install with composer
-	composer require cugr/ncbiwrapper:dev-master
+	composer require cugr/bioscraper
 
 
 ## Note
