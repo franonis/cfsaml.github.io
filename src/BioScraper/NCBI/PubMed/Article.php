@@ -101,13 +101,14 @@ class Article
     {
         $authors = array();
         if (isset($this->articlexml->AuthorList)) {
-            try {
-                foreach ($this->articlexml->AuthorList->Author as $author) {
-                    $authors[] = (string) $author->LastName . '|' . (string) $author->ForeName . '|' . (string) $author->Initials;
-                }
-            } catch (Exception $e) {
-                $a = $this->articlexml->AuthorList->Author;
-                $authors[] = (string) $author->LastName . '|' . (string) $author->ForeName . '|' . (string) $author->Initials;
+            foreach ($this->articlexml->AuthorList->Author as $authorxml) {
+                $author = [];
+                $author['lastname'] = (string) $authorxml->LastName;
+                $author['firstname'] = (string) $authorxml->ForeName;
+                $author['initials'] = (string) $authorxml->Initials;
+                $author['affiliation'] = (string) $authorxml->AffiliationInfo->Affiliation;
+
+                $authors[] = $author;
             }
         }
 
@@ -252,15 +253,6 @@ class Article
     public function getAbstractText()
     {
         return (string) $this->articlexml->Abstract->AbstractText;
-    }
-
-    /**
-    * Get the Affiliation from the SimpleXMLElement
-    * @return string Affiliation
-    */
-    public function getAffiliation()
-    {
-        return (string) $this->articlexml->Affiliation;
     }
 
     /**
