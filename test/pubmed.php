@@ -17,8 +17,8 @@ $webenv = new BioScraper\NCBI\PubMed\WebEnv();
 $articles = $webenv->query('sea cucumber database');
 foreach ($articles as $article) {
 	// echo $article->getPubMedId()."\t".json_encode($article->getKeywords())."\n";
-	echo $article->getArticleTitle()."\n";
-	var_dump($article->getAuthors());
+	echo $article->getJournalTitle()."\n";
+	// var_dump($article->getAuthors());
 }
 
 /**

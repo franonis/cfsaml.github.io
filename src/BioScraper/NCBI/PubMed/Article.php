@@ -227,7 +227,7 @@ class Article
     */
     public function getJournalCountry()
     {
-        return (string) $this->MedlineJournalInfo->Country;
+        return (string) $this->xml->MedlineJournalInfo->Country;
     }
 
     /**
@@ -236,7 +236,7 @@ class Article
     */
     public function getJournalNlmUniqueID()
     {
-        return (string) $this->MedlineJournalInfo->NlmUniqueID;
+        return (string) $this->xml->MedlineJournalInfo->NlmUniqueID;
     }
 
     /**
@@ -245,7 +245,7 @@ class Article
     */
     public function getJournalISSNLinking()
     {
-        return (string) $this->MedlineJournalInfo->ISSNLinking;
+        return (string) $this->xml->MedlineJournalInfo->ISSNLinking;
     }
 
     /**
