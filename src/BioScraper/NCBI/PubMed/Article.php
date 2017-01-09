@@ -148,7 +148,11 @@ class Article
     */
     public function getDoi()
     {
-        return (string) $this->articlexml->ELocationID[1];
+        foreach ($this->articlexml->ELocationID as $elocation_id) {
+            if($elocation_id['EIdType'] == 'doi'){
+                return (string) $elocation_id;
+            }
+        }
     }
 
     /**
@@ -156,7 +160,11 @@ class Article
     */
     public function getPii()
     {
-        return (string) $this->articlexml->ELocationID[0];
+        foreach ($this->articlexml->ELocationID as $elocation_id) {
+            if($elocation_id['EIdType'] == 'pii'){
+                return (string) $elocation_id;
+            }
+        }
     }
 
     /**
