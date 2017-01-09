@@ -49,7 +49,7 @@ class WebEnv extends Entrez
 
 		$this->tmpfile = $this->dir .'/'. 
 						preg_replace('/\s/', '_', $term).'_'.
-						date('Y_m_d_H_i_s') . '_' . 
+						date('YmdHis') . '_' . 
 						$this->getDb() .'.xml.webenv';
 
 		return $this->webEnvFetch();
