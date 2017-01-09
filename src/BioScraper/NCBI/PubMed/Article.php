@@ -71,6 +71,7 @@ class Article
             'PubDay'                =>     $this->getPubDay(),
             'ISSN'                  =>     $this->getISSN(),
             'JournalTitle'          =>     $this->getJournalTitle(),
+            'JournalTitleAbbre'     =>     $this->getJournalTitleAbbre(),
             'JournalCountry'        =>     $this->getJournalCountry(),
             'JournalIssue'          =>     $this->getJournalISSNLinking(),
             'JournalNlmUniqueID'    =>     $this->getJournalNlmUniqueID(),
@@ -218,11 +219,20 @@ class Article
     */
     public function getJournalTitle()
     {
-        return (string) $this->xml->MedlineJournalInfo->MedlineTA;
+        return (string) $this->articlexml->Journal->Title;
     }
 
     /**
-    * Get the ISOAbbreviation from the SimpleXMLElement
+    * Get the Journal ISOAbbreviation from the SimpleXMLElement
+    * @return string Journal Title
+    */
+    public function getJournalTitleAbbre()
+    {
+        return (string) $this->articlexml->Journal->ISOAbbreviation;
+    }
+
+    /**
+    * Get the Country from the SimpleXMLElement
     * @return string ISOAbbreviation
     */
     public function getJournalCountry()
@@ -231,7 +241,7 @@ class Article
     }
 
     /**
-    * Get the ISOAbbreviation from the SimpleXMLElement
+    * Get the NlmUniqueID from the SimpleXMLElement
     * @return string ISOAbbreviation
     */
     public function getJournalNlmUniqueID()
@@ -240,7 +250,7 @@ class Article
     }
 
     /**
-    * Get the ISOAbbreviation from the SimpleXMLElement
+    * Get the ISSNLinking from the SimpleXMLElement
     * @return string ISOAbbreviation
     */
     public function getJournalISSNLinking()
