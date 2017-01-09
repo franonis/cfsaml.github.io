@@ -87,7 +87,7 @@ class WebEnv extends PubMed
 		while(false !== ($file=readdir($dirr))){
 			if($file != "." && $file != ".."){
 				$pattern = '/' . $this->getDb() . ".xml.webenv$/";
-				if(preg_match($pattern, $file)) unlink($dir.'/'.$file);
+				if(preg_match($pattern, $file)) unlink($this->dir.'/'.$file);
 			}
 		}
 

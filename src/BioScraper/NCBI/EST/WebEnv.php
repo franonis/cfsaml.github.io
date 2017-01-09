@@ -76,7 +76,7 @@ class WebEnv extends Entrez
 		while(false !== ($file=readdir($dirr))){
 			if($file != "." && $file != ".."){
 				$pattern = '/'.$this->getDb().".xml.webenv$/";
-				if(preg_match($pattern, $file)) unlink($file);
+				if(preg_match($pattern, $file)) unlink($this->dir .'/'. $file);
 			}
 		}
 		isset($this->tmpfile) ? file_put_contents($this->tmpfile, $content) : '';
