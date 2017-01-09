@@ -63,24 +63,26 @@ class Article
     private function toArray()
     {
         return array(
-            'PMID'         => $this->getPubMedId(),
-            'Volume'       => $this->getVolume(),
-            'Issue'        => $this->getIssue(),
-            'PubYear'      => $this->getPubYear(),
-            'PubMonth'     => $this->getPubMonth(),
-            'PubDay'       => $this->getPubDay(),
-            'ISSN'         => $this->getISSN(),
-            'JournalTitle' => $this->getJournalTitle(),
-            'JournalAbbr'  => $this->getJournalAbbr(),
-            'Pagination'   => $this->getPagination(),
-            'ArticleTitle' => $this->getArticleTitle(),
-            'AbstractText' => $this->getAbstractText(),
-            'Affiliation'  => $this->getAffiliation(),
-            'Authors'      => $this->getAuthors(),
-            'Keywords'     => $this->getKeywords(),
-            'Doi'         => $this->getDoi(),
-            'Pii'          => $this->getPii(),
-            'CopyrightInformation'  => $this->getCopyRightInformation()
+            'PMID'                  =>     $this->getPubMedId(),
+            'Volume'                =>     $this->getVolume(),
+            'Issue'                 =>     $this->getIssue(),
+            'PubYear'               =>     $this->getPubYear(),
+            'PubMonth'              =>     $this->getPubMonth(),
+            'PubDay'                =>     $this->getPubDay(),
+            'ISSN'                  =>     $this->getISSN(),
+            'JournalTitle'          =>     $this->getJournalTitle(),
+            'JournalCountry'        =>     $this->getJournalCountry(),
+            'JournalIssue'          =>     $this->getJournalISSNLinking(),
+            'JournalNlmUniqueID'    =>     $this->getJournalNlmUniqueID(),
+            'Pagination'            =>     $this->getPagination(),
+            'ArticleTitle'          =>     $this->getArticleTitle(),
+            'AbstractText'          =>     $this->getAbstractText(),
+            'Affiliation'           =>     $this->getAffiliation(),
+            'Authors'               =>     $this->getAuthors(),
+            'Keywords'              =>     $this->getKeywords(),
+            'Doi'                   =>     $this->getDoi(),
+            'Pii'                   =>     $this->getPii(),
+            'CopyrightInformation'  =>     $this->getCopyRightInformation()
         );
     }
 
@@ -216,16 +218,34 @@ class Article
     */
     public function getJournalTitle()
     {
-        return (string) $this->articlexml->Journal->Title;
+        return (string) $this->xml->MedlineJournalInfo->MedlineTA;
     }
 
     /**
     * Get the ISOAbbreviation from the SimpleXMLElement
     * @return string ISOAbbreviation
     */
-    public function getJournalAbbr()
+    public function getJournalCountry()
     {
-        return (string) $this->articlexml->Journal->ISOAbbreviation;
+        return (string) $this->MedlineJournalInfo->Country;
+    }
+
+    /**
+    * Get the ISOAbbreviation from the SimpleXMLElement
+    * @return string ISOAbbreviation
+    */
+    public function getJournalNlmUniqueID()
+    {
+        return (string) $this->MedlineJournalInfo->NlmUniqueID;
+    }
+
+    /**
+    * Get the ISOAbbreviation from the SimpleXMLElement
+    * @return string ISOAbbreviation
+    */
+    public function getJournalISSNLinking()
+    {
+        return (string) $this->MedlineJournalInfo->ISSNLinking;
     }
 
     /**
