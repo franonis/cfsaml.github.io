@@ -126,12 +126,7 @@ class Article
     {
         $keywords = array();
         if (isset($this->xml->KeywordList)) {
-            try {
-                foreach ($this->xml->KeywordList->Keyword as $kw) {
-                    $keywords[] = (string) $kw;
-                }
-            } catch (Exception $e) {
-                $kw = $this->xml->KeywordList->Keyword;
+            foreach ($this->xml->KeywordList->Keyword as $kw) {
                 $keywords[] = (string) $kw;
             }
         }
