@@ -51,7 +51,7 @@ class WebEnv extends PubMed
 		$this->articleCount = (int) $xml->Count;
 
 		if($this->articleCount <= 0){
-			die("No article was found, check your spelling!\n");
+			throw new \Exception("No article was found, check your spelling!", 1);
 		}
 		
 		$this->tmpfile = $this->dir .'/'. 
