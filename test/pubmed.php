@@ -27,3 +27,5 @@ foreach ($articles as $article) {
 $pubmedid = new BioScraper\NCBI\PubMed\PubMedId();
 $article = $pubmedid->query(28012135);
 var_dump($article->getAuthors());
+
+$tmp = new BioScraper\NCBI\PubMed\ReadTmp('sea_cucumber_database_20170109072700_pubmed.xml.webenv');
