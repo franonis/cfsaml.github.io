@@ -182,29 +182,32 @@ class Article
 
     /**
     * Get the PubYear from the SimpleXMLElement
-    * @return string PubYear
+    * @return integer PubYear
     */
     public function getPubYear()
     {
-        return (string) $this->articlexml->Journal->JournalIssue->PubDate->Year;
+        $year = (string) $this->articlexml->Journal->JournalIssue->PubDate->Year;
+        return empty($year) ? null : intval($year);
     }
 
     /**
     * Get the PubMonth from the SimpleXMLElement
-    * @return string PubMonth
+    * @return integer PubMonth
     */
     public function getPubMonth()
     {
-        return (string) $this->articlexml->Journal->JournalIssue->PubDate->Month;
+        $month = (string) $this->articlexml->Journal->JournalIssue->PubDate->Month;
+        return empty($month) ? null : intval(date("m", strtotime($month)));
     }
 
     /**
     * Get the PubDay from the SimpleXMLElement
-    * @return string PubDay
+    * @return integer PubDay
     */
     public function getPubDay()
     {
-        return (string) $this->articlexml->Journal->JournalIssue->PubDate->Day;
+        $day = (string) $this->articlexml->Journal->JournalIssue->PubDate->Day;
+        return empty($day) ? null : intval($day);
     }
 
     /**
