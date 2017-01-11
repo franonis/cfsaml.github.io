@@ -26,7 +26,6 @@ class ReadTmp
 	public function __construct($tmpfile)
 	{
 		$this->tmpfile = $tmpfile;
-		$this->parse();
 	}
 
 	/**
