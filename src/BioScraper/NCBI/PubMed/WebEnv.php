@@ -77,8 +77,8 @@ class WebEnv extends PubMed
 		$url .="&query_key=". $this->querykey . "&WebEnv=" . $this->webenv;
 
 		$this->curl = curl_init(); // new curl
-		$this->connectionTimeout = 10*60; // 10 minutes
-		$this->timeout = 10*60;
+		$this->connectionTimeout = 120*60; // 120 minutes
+		$this->timeout = 120*60;
 
 		$content = $this->sendRequest($url);
 		$dirr = opendir($this->dir);
