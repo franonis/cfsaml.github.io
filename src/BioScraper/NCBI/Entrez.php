@@ -46,10 +46,11 @@ abstract class Entrez
 	 */
 	protected $baseUrl = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/';
 	/**
-	* The maximum number of articles to receive. Defaults to 0, receive all
+	* The maximum number of articles to receive. Max to 10,000
+	* https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch
 	* @var integer
 	*/
-	protected $returnMax = 0;
+	protected $returnMax = 10;
 
 	/**
 	* Which article to start at

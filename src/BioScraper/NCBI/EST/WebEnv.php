@@ -12,9 +12,15 @@ namespace BioScraper\NCBI\EST;
 use BioScraper\NCBI\EST\EstXmlParser;
 use BioScraper\NCBI\Entrez;
 use SimpleXMLElement;
+use Exception;
 
 class WebEnv extends Entrez
 {
+	/**
+	 * @var est count
+	 */
+	private $est_num;
+
 	/**
 	 * Tmp file directory
 	 */
@@ -36,6 +42,7 @@ class WebEnv extends Entrez
 	public function query($term,$dir = '.')
 	{
 		$this->dir = $dir;
+		$this->term = $term;
 		// Initiate search
 		$url  = $this->searchUrl();
 		$url .= "?db=" . $this->getDb();
@@ -46,13 +53,23 @@ class WebEnv extends Entrez
 		$envxml = new SimpleXMLElement($content);
 		$this->webenv = $envxml->WebEnv;
 		$this->querykey = $envxml->QueryKey;
-
-		$this->tmpfile = $this->dir .'/'. 
-						preg_replace('/\s/', '_', $term).'_'.
-						date('YmdHis') . '_' . 
-						$this->getDb() .'.xml.webenv';
-
 		return $this->webEnvFetch();
+	}
+
+	/**
+	 * If the results from NCBI is more than 10,000, all the results need to download for
+	 * multiple times
+	 *
+	 * @return array of EstXmlParser | Exception
+	 */
+	public function nextQuery ()
+	{
+	    if($this->est_num < $this->returnMax)
+	    	throw new Exception("No more return data from NCBI", 404);
+	    	
+	    $this->setReturnStart($this->returnStart + $this->returnMax);
+	    $ests = $this->webEnvFetch();
+	    return $ests;
 	}
 
 	/**
@@ -66,27 +83,23 @@ class WebEnv extends Entrez
 
 		$url = $this->fetchUrl();
 		$url .= '?db=' . $this->getDb() . "&retmode=" . self::RETURN_MODE;
+		$url .= '&retstart=' . $this->returnStart .'&retmax=' . $this->returnMax;
 		$url .='&WebEnv=' . $this->webenv . '&query_key=' . $this->querykey;
 
 		$content = $this->sendRequest($url);
 
-		$dirr = opendir($this->dir);
-
-		// delete previous tmp file
-		while(false !== ($file=readdir($dirr))){
-			if($file != "." && $file != ".."){
-				$pattern = '/'.$this->getDb().".xml.webenv$/";
-				if(preg_match($pattern, $file)) unlink($this->dir .'/'. $file);
-			}
-		}
-		isset($this->tmpfile) ? file_put_contents($this->tmpfile, $content) : '';
+		$this->tmpfile = $this->dir .'/'. 
+						preg_replace('/\s/', '_', $this->term).'_'.
+						date('YmdHis') . '_' . 
+						$this->getDb() .'.xml.webenv';
+		file_put_contents($this->tmpfile, $content);
 		
 		$estxml = new SimpleXMLElement($content);
 		$ests = [];
 		foreach ($estxml->GBSeq as $ex) {
 			$ests[] = new EstXmlParser($ex);
 		}
-
+		$this->est_num = count($ests);
 		return $ests;
 	}
 }
