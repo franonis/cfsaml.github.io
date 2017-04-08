@@ -50,7 +50,7 @@ abstract class Entrez
 	* https://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch
 	* @var integer
 	*/
-	protected $returnMax = 10;
+	protected $returnMax = 10000;
 
 	/**
 	* Which article to start at
