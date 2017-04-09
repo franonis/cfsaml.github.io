@@ -35,13 +35,11 @@ class WebEnv extends PubMed
 	{
 		$this->dir = $dir;
 		$this->term = $term;
-		// Initiate search
-		$this->setReturnMax(0);	// receive all
 		$this->useHistory(true);	// use history
 
 		$url  = $this->searchUrl();
 		$url .= "?db=" . $this->getDb();
-		intval($this->returnMax) ? $url .= "&retmax=" . intval($this->returnMax) : '';
+
 		$this->usehistory ? $url .= "&usehistory=y" : '';
 		$url .= "&retmode=" . self::RETURN_MODE;
 		$url .= "&retstart=" . intval($this->returnStart);
