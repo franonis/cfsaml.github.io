@@ -53,6 +53,7 @@ class WebEnv extends Entrez
 		$envxml = new SimpleXMLElement($content);
 		$this->webenv = $envxml->WebEnv;
 		$this->querykey = $envxml->QueryKey;
+		$this->esearchCount = $envxml->Count;
 		return $this->webEnvFetch();
 	}
 
@@ -64,10 +65,7 @@ class WebEnv extends Entrez
 	 */
 	public function nextQuery ()
 	{
-	    if($this->est_num < $this->returnMax)
-	    	throw new Exception("No more return data from NCBI", 404);
-	    	
-	    $this->setReturnStart($this->returnStart + $this->returnMax);
+	 	$this->setReturnStart($this->returnStart + $this->returnMax);
 	    $ests = $this->webEnvFetch();
 	    return $ests;
 	}

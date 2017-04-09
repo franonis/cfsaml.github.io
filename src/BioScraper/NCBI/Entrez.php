@@ -13,6 +13,10 @@ namespace BioScraper\NCBI;
 abstract class Entrez
 {
 	/**
+	 * @var integer esearch count, this is the total results number in NCBI
+	 */
+	public $esearchCount;
+	/**
 	* Curl resource handle
 	* @var resource
 	*/
