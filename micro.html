@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <meta name="description" content="cucumber, Germplasm, resource">
+      <meta name="author" content="liubing">
+      <link rel="icon" href="http://cmb.bnu.edu.cn:8088/favicon.ico">
+      <!-- CSRF Token -->
+      <meta name="csrf-token" content="lIxszhRCfwh0f6MDBLZ3X5Sx0VocDlg6GNHYeNhv">
+
+      <title>CuGR</title>
+
+      <!-- 新 Bootstrap 核心 CSS 文件 -->
+      <link rel="stylesheet" href="http://cmb.bnu.edu.cn:8088/css/bootstrap.min.css">
+
+      <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+      <script src="http://cmb.bnu.edu.cn:8088/js/jquery-3.1.1.min.js"></script>
+
+      <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+      <script src="http://cmb.bnu.edu.cn:8088/js/bootstrap.min.js"></script>
+
+      <!-- Font Awesome 自动加载文件  -->
+      <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+      <!-- Auto hide navbar -->
+      <script src="http://cmb.bnu.edu.cn:8088/js/jquery.bootstrap-autohidingnavbar.min.js"></script>
+
+      <!-- Buttons -->
+      <link rel="stylesheet" type="text/css" href="http://cmb.bnu.edu.cn:8088/css/buttons.css">
+
+      <!-- Custom styles for this template -->
+      <link href="http://cmb.bnu.edu.cn:8088/css/customize.css" rel="stylesheet">
+
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Scripts -->
+      <script>
+          window.Laravel = {"csrfToken":"lIxszhRCfwh0f6MDBLZ3X5Sx0VocDlg6GNHYeNhv"}      </script>
+        </head>
+  <body>
+
+      <!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://www.cfsa.net.cn/"><img width="40px" src="https://s6.sinaimg.cn/bmiddle/00292THVgy6O2yuh5xXe5&690" style="display:inline-flex"> <strong> CFSA</strong></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="http://www.cfsa.net.cn/"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;Home</a>
+        </li>
+
+        <li class="dropdown">
+          <a href="http://www.cfsa.net.cn/download">Download </a>
+        </li>
+        <li id="help" class="dropdown ">
+          <a href="http://cmb.bnu.edu.cn:8088/help">Help </a>
+        </li>
+        <li id="about" class="dropdown">
+          <a href="http://cmb.bnu.edu.cn:8088/about">About</a>
+        </li>
+        <li>
+          <form id="searchall" class="navbar-form navbar-right" action="http://cmb.bnu.edu.cn:8088/search" method="get" role="search">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="" >
+              <span class="input-group-btn">
+                <button id="narbar-search-btn" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </span>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <!-- Right Side Of Navbar -->
+      <ul class="nav navbar-nav navbar-right">
+          <!-- Authentication Links -->
+                        <li><a href="http://cmb.bnu.edu.cn:8088/login"><span class="label label-success">Sign in</span></a></li>
+                </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+                <div class="row">
+            <div class="col-md-7">
+                <h2>Welcome to</h2>
+                <p><strong>国家食源性致病微生物全基因组数据库</strong></p>
+                <!-- Button trigger modal -->
+                <button class="button button-primary button-rounded" data-toggle="modal" data-target="#myModal">About the web</button>
+                <p></p>
+      <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+     	<div class="modal-content">
+         <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h2 class="modal-title" id="myModalLabel">CuGR</h2>
+      	</div>
+      	<div class="modal-body">
+         <p>The CuGR website was designed to work with most common browsers. No additional software is required. The CuGR webpages use the HTML5 and based on the latest version of Bootstrap 3. Thanks to glyphicon and Font Awesome for their free icons!</p>
+         <p>We tested the pages in Firefox 30.0, Safari 7.06, IE 11, Chrome 37.0, it works well, but not works well in IE 7 and lower version. Please let us know if you experience problem with other browsers, you can find the e-mail address in the footer of each webpage.</p>
+         <h3>Browser setting:</h3>
+	 <p>*JavaScript has to be activated for the dropdown menus and other functions to work properly;</p>
+	 <p>*We log the information of your browser, each query against the website but those information will never be shared with third parties. </p>
+      	</div>
+      	<div class="modal-footer">
+         <button type="button" class="button button-rounded" data-dismiss="modal">Close</button>
+      	</div>
+       </div>
+      </div>
+     </div>
+            </div>
+            <div class="col-md-5">
+                <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <a href="http://www.cfsa.net.cn/"><img src="https://s6.sinaimg.cn/bmiddle/00292THVgy6O2yuh5xXe5&690" data-holder-rendered="true"></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container content">
+      <!-- Example row of columns -->
+        <br/>
+        <br>
+        <hr/>
+        <br>
+      <div class="row">
+        <div class="col-sm-6 col-xs-12 col-md-12 col-lg-6">
+            <h3>News</h3>
+            <h4 align="center">Significant Improvement</h4>
+            <p> New framework updated! Now, This web was written in the latest version of language HTML (HTML5)! And now it is more suitable for devices with different size of screen.<br/>
+                <a href="news">More news&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-hand-right"></span></a>
+            </p>
+        </div>
+        <div class="col-sm-6 col-xs-12 col-md-12 col-lg-6 status">
+            <h3>Current Status</h3>
+            <ul>
+            <li><i>Cucumis sativus</i> ( hardwickii ): 13 accessions</li>
+                                                                        <li><i>Cucumis sativus</i> ( sativus ): 103 accessions</li>
+<a data-toggle="modal" data-target="#orthologs" style="cursor:pointer">Orthologs&nbsp;&nbsp;<sup><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></sup></a></li>
+<!--modal orthologs-->
+                <div class="modal fade" id="orthologs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+        <div class="modal-content">
+         <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h2 class="modal-title" id="myModalLabel">Orthologs</h2>
+        </div>
+        <div class="modal-body">
+		 <p>To identify orthologous groups among the four sequenced genomes(<i>Cucumis sativus L.</i>, <i>C.sativus var.h    ardwickii</i>, <i>Cucumis melo L.</i>, <i>Citrullus lanatus</i>), OrthoMCL (Li, Stoeckert et al. 2003) was used.</p><p>First, all-against-all BLASTP compare the set of protein sequences from the eleven speices with an E-value cutoff of 1e-5. Then, the result of BLASTP was analyzed by OrthoMCL algorithm. Last, orthologous groups were clustered by MCL (Enright, Van Dongen et al. 2002) (I=1.5) algorithm.</p> <p>The software versions were: OrthoMCL version 2.05, MCL version mcl 12-068, and NCBI BLAST version 2.2.15.</p>
+        </div>
+        <div class="modal-footer">
+         <button type="button" class="button button-rounded" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+      </div>
+     </div>
+<!--modal orthologs-->
+                <li>Genomic features</li>
+                <li>Literature: 9687 records from PubMed</li>
+                <li style="list-style:none"><a href="status">More details <span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></li>
+            </ul>
+        </div>
+      </div>
+  </div>
+
+      <footer>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+         <div class="col-xs-12">
+          <h4>Contact Us</h4>
+           <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 contact">
+            <p>Institute of Vegetables and Flowers<br>
+               Chinese Academy of Agricultural Scicences, Beijing<br>
+               <span class="fui-mail"></span>   E-mail: <a href="mailto:huangsanwen@caas.net.cn" style="word-wrap:break-word">huangsanwen@caas.net.cn</a>
+            </p>
+           </div>
+           <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6 contact">
+            <p style="word-wrap:break-word">Laboratory of Computational Molecular Biology<br>
+             College of Life Sciences, Beijing Normal university<br>
+             <span class="fui-mail"></span>   E-mail: <a href="mailto:linkui@bnu.edu.cn">linkui@bnu.edu.cn</a>
+            </p>
+           </div>            
+          </div> <!-- /col-xs-6 -->
+         </div>
+         <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+          <h4>Links</h4>           
+           <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+            <p><a href="http://solgenomics.net/" target="_blank"><img src="http://cmb.bnu.edu.cn:8088/image/sgn_logo_icon.png" width="40px"> SOL Genomics Network (SGN)</a></p>
+            <p><a href="http://blast.st-va.ncbi.nlm.nih.gov/Blast.cgi" target="_blank"><img src="http://cmb.bnu.edu.cn:8088/image/ncbi.jpg" width="60px"> Basic Local Alignment Search Tool (BLAST)</a></p>                    
+           </div>
+           <div class="col-sm-12 col-xs-12 col-md-6 col-lg-6">
+            <p><a href="http://gmod.org/wiki/Gbrowse" target="_blank"><img src="http://cmb.bnu.edu.cn:8088/image/gbrowse.jpg" width="40px"> Generic Genome Browser (GBrowse)</a></p>
+            <p><a href="http://www.ncbi.nlm.nih.gov/" target="_blank"><img src="http://cmb.bnu.edu.cn:8088/image/ncbi.jpg" width="60px"> The National Center for Biotechnology Information </a></p>
+           </div>
+         </div>
+        <h6 class="text-center">Copyright &copy; 2013-2018 <a href="mailto:" data-toggle="tooltip" data-placement="top" title="Send e-mail to the web administrator">Cucurbitaceous Germplasm Resources</a> All Rights Reserved.</h6>
+      </div>
+      </footer>
+      <script>$(document).ready(function(){$("#back-to-top").hide();$(function (){$(window).scroll(function(){if ($(window).scrollTop()>400){$("#back-to-top").fadeIn(500);}else{$("#back-to-top").fadeOut(1500);}});$("#back-to-top").click(function(){$('body,html').animate({scrollTop:0},1000);return false;});});});$("#narbar-search-btn").popover();$('.navbar-nav .dropdown').mouseover(function(){$(this).addClass('open');});$('.navbar-nav .dropdown').mouseout(function(){$(this).removeClass('open');});$('[data-toggle="tooltip"]').tooltip();$('nav').autoHidingNavbar();</script>
+      <div id="back-to-top"><a href="#top"><span class="glyphicon glyphicon-chevron-up"></span></a></div>
+  </body>
+    </html>
